@@ -128,10 +128,27 @@ img {
    font-size: 14px;
    line-height: 1.1;
    letter-spacing: 0.02em;
+
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-nav .item {
+   position: relative;
 }
 
 .nav-link.current {
    color: var(--main-accent-color);
+}
+
+.nav-link.current::after {
+   content: "";
+   width: 100%;
+   height: 4px;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   background-color: var(--main-accent-color);
+   border-radius: 2px;
 }
 
 .nav-link:hover,
@@ -146,15 +163,14 @@ img {
    display: flex;
    align-items: center;
 
-   /* display: flex;
-   align-items: center; */
-
    color: var(--second-title-color);
    font-weight: 500;
    font-size: 14px;
    line-height: 1.1;
    letter-spacing: 0.02em;
    text-transform: lowercase;
+
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-mail:hover,
@@ -238,6 +254,8 @@ img {
    text-align: center;
    letter-spacing: 0.06em;
    cursor: pointer;
+
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -342,6 +360,28 @@ img {
    margin-right: 30px;
 }
 
+.work-list > li {
+   position: relative;
+}
+
+.work-info {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 70px;
+   background-color: rgba(47, 48, 58, 0.8);
+}
+
+.work-info-text {
+   color: var(--main-usual-color);
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 1.4;
+   text-align: center;
+   letter-spacing: 0.03em;
+   text-transform: uppercase;
+   margin-top: 27px;
+}
 /* ---------------------TEAM--------------------- */
 
 .team-list {
@@ -424,6 +464,9 @@ img {
    justify-content: center;
    align-items: center;
    fill: var(--icon-color);
+
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .member-link:hover {
@@ -454,6 +497,8 @@ img {
    fill: var(--icon-color);
    border: 1px solid var(--icon-color);
    border-radius: 4px;
+
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover {
@@ -513,6 +558,8 @@ img {
    font-size: 14px;
    line-height: 1.7;
    letter-spacing: 0.03em;
+
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-mail,
@@ -522,6 +569,8 @@ img {
    font-size: 14px;
    line-height: 1.7;
    letter-spacing: 0.03em;
+
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-mail:hover,
@@ -573,6 +622,8 @@ img {
    justify-content: center;
    align-items: center;
    fill: var(--main-usual-color);
+
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link:hover {
@@ -604,6 +655,9 @@ img {
    text-align: center;
    letter-spacing: 0.03em;
    cursor: pointer;
+
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-item:hover,
@@ -634,6 +688,46 @@ img {
    margin-bottom: 30px;
 }
 
+.example-thumb {
+   position: relative;
+
+   overflow: hidden;
+}
+
+.example-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(33, 150, 243, 0.9);
+
+   opacity: 0;
+
+   transform: translateY(101%);
+
+   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example-overlay {
+   opacity: 1;
+}
+
+.example-item:hover .example-overlay {
+   transform: translateY(0);
+}
+
+.thumb-text {
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 63px 24px 178px 24px;
+   color: var(--main-usual-color);
+   font-size: 18px;
+   line-height: 1.5;
+   letter-spacing: 0.03em;
+}
+
 .example-list .link {
    display: block;
 }
@@ -641,6 +735,7 @@ img {
 .example-list .link:hover {
    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
       1px 4px 6px rgba(0, 0, 0, 0.16);
+   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .example-list > .item:nth-child(3n + 3) {
